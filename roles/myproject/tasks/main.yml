@@ -6,3 +6,12 @@
     group: reza
     mode: 0755
   tags: [create_dir]
+
+- name: ---- create file in /home/reza/testdir
+  file:
+    path: /home/reza/testdir1/file1
+    state: touch
+    owner: reza
+    group: reza
+    mode: 0755
+  tags: [create_file]
