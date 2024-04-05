@@ -1,0 +1,8 @@
+- name: ---- create directory in /home ----
+  file:
+    path: /home/reza/testdir1
+    state: directory
+    owner: reza
+    group: reza
+    mode: 0755
+  tags: [create_dir]
