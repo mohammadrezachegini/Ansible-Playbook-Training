@@ -60,3 +60,44 @@
   debug:
     msg: "{{http_port}}"
   tags: [show_my_http_port]
+
+- name: ---- command module ----
+  command: cat file1
+  args:
+    chdir: /home/reza/testdir1
+  register: catty
+  tags: [show_command_module]
+
+- name: ---- show result of command module ---
+  debug:
+    msg: "{{catty.stdout}}"
+  tags: [show_command_module]
+
+
+- name: ---- command module Execise for df -h ----
+  command: df -h
+  register: df
+  tags: [show_command_module_ex8_df]
+
+- name: ---- show result of command module for df -h Exercise---
+  debug:
+    msg: "{{df.stdout}}"
+  tags: [show_command_module_ex8_df]
+
+# - name: ---- command module Execise for ps aux ----
+#   command: ps aux | grep ansible
+#   register: ps
+#   tags: [show_command_module_ex8_ps]
+
+# - name: ---- show result of command module for ps aux Exercise---
+#   debug:
+#     msg: "{{ps.stdout}}"
+#   tags: [show_command_module_ex8_ps]
+
+- name: ---- expect command ----
+  expect:
+    command: passwd devops
+    responses:
+      password: "123"
+  no_log: true
+  tags: [show_expect_module]
