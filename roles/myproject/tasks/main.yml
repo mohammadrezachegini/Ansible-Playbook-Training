@@ -1,4 +1,4 @@
-- name: ---- create directory in /home ----
+- name: ---- create directory in /home/reza ----
   file:
     path: /home/reza/testdir1
     state: directory
@@ -15,3 +15,48 @@
     group: reza
     mode: 0755
   tags: [create_file]
+
+
+- name: ---- show my user name ----
+  debug:
+    msg: "{{user.name}}"
+  tags: [show_var_username]
+
+- name: ---- show my user email ----
+  debug:
+    msg: "{{user.email}}"
+  tags: [show_var_email]
+
+- name: ---- show my user list ----
+  debug:
+    msg: "{{user_list[0]}}"
+  tags: [show_user_list]
+
+
+- name: ---- show my user list 2----
+  debug:
+    msg: "{{user_list2}}"
+  tags: [show_user_list2]
+
+- name: ---- extra vars ----
+  debug:
+    msg: "{{nodes}} - {{package_name}}"
+  tags: [show_extra_vars]
+
+- name: --- create var and test in tasks main yaml ----
+  set_fact:
+    myvar: "salam"
+- name: ----show my var ----
+  debug:
+    msg: "{{myvar}}"
+  tags: [show_my_var]
+
+- name: ----show my os family ----
+  debug:
+    msg: "{{ansible_os_family}}"
+  tags: [show_my_os_family]
+
+- name: ----show my http port as group vars----
+  debug:
+    msg: "{{http_port}}"
+  tags: [show_my_http_port]

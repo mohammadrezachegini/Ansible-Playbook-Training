@@ -1,0 +1,9 @@
+user:
+  name: devops
+  email: reza@reza.com
+user_list:
+  - Mohammad
+  - Reza
+  - Mohammad Reza
+
+user_list2: [Tocino,Burro,Gordo]
