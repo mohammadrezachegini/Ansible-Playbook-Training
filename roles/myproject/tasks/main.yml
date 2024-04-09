@@ -231,3 +231,13 @@
     name: mamad
     state: present
   tags: [group_module]
+
+
+- name: --- user module ---
+  user:
+    name: user1
+    group: devops
+    state: present
+    shell: /bin/bash
+    password: 123
+  tags: [user_module]
