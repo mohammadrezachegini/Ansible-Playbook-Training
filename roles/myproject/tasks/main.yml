@@ -312,4 +312,14 @@
     src: .bashrc.j2
     dest: ~/.bashrc
     backup: yes
+    # force: yes
   tags: [template_module]
+
+
+
+- name: --- template module -- 
+  lineinfile:
+    path: ~/.bashrc # if it doesn't exist it will append at the end of the file
+    insertafter: 'alias sss=echo {{myvarinbash}} '
+    line: 'alias ssss=echo {{myvarinbash}}'
+  tags: [lineinfile_module]
