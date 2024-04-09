@@ -200,3 +200,26 @@
     # force: yes
   tags: [copy_module_remote]
 
+
+
+- name: --- fetch module ---
+  fetch:
+    src: /home/reza/testdir1/file1
+    dest: /home/reza
+  tags: [fetch_module]
+
+
+- name: --- fetch module flat ---
+  fetch:
+    src: /home/reza/testdir1/file1
+    dest: /home/reza/
+    flat: yes
+  tags: [fetch_module_flat]
+
+- name: --- fetch module checksum ---
+  fetch:
+    src: /home/reza/testdir1/file1
+    dest: /home/reza/
+    flat: yes
+    validate_checksum: no
+  tags: [fetch_module_checksum]
