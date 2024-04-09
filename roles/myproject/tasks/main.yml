@@ -325,3 +325,12 @@
   tags: [lineinfile_module]
 
 
+- name: --- replace module -- 
+  replace:
+    path: ~/.bashrc # if it doesn't exist it will append at the end of the file
+    regexp: 'alias ssss=echo {{myvarinbash}} '
+    replace: 'alias ffff=echo {{myvarinbash}}'
+    # after: 'start after line'
+    # before: 'start before line'
+    # backup: yes
+  tags: [replace_module]
