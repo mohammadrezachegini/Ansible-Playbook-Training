@@ -101,3 +101,17 @@
       password: "123"
   no_log: true
   tags: [show_expect_module]
+
+
+- name: --- Script Module ---
+  script: test.sh
+  args:
+    creates: /home/reza/testdir2
+    removes: /home/reza/testdir1
+  register: scp_var
+  tags: [execute_script]
+
+- name: -- show value script --
+  debug:
+    msg: "{{scp_var.stdout}}"
+  tags: [execute_script]
