@@ -278,10 +278,16 @@
 
 
 
-  - name: --- apt modeule ---
+- name: --- apt modeule ---
   apt:
     name: nginx # '*' is for updating all pacakge if we add latest in state
     state: latest # presnt for install lates for update
     # update_only: yes
     # security: yes
   tags: [apt_module]
+
+
+- name: --- apt dpkg modeule ---
+  apt:
+    deb: /opt/deb.pkg
+  tags: [apt_module_dpkg]
