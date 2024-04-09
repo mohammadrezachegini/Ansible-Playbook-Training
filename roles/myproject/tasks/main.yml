@@ -253,3 +253,24 @@
     enabled: yes
     state: present
   tags: [yum_repo_module]
+
+
+- name: --- yum modeule ---
+  yum:
+    name: nginx # '*' is for updating all pacakge if we add latest in state
+    state: latest # presnt for install lates for update
+    update_only: yes
+    exclude: kernel*
+  tags: [yum_module]
+
+- name: --- yum list --
+  yum:
+    list: ansible
+  register: yum_out
+  tag: [yum_list_module]
+
+
+- name: --- yum list print out --
+  debug:
+    msg: "{{yum_out}}"
+  tag: [yum_list_module]
