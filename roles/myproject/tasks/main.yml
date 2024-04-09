@@ -300,3 +300,7 @@
     purge: yes
   tags: [apt_module_remove]
 
+- name: --- apt auto remove dependency modeule ---
+  apt:
+    autoremove: yes 
+  tags: [apt_module_autoremove]
