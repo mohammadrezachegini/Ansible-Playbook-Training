@@ -172,3 +172,31 @@
     msg: "{{my_var.stdout}}"
   tags: [shell_module_exe10_5]
 
+
+
+
+- name: --- copy module ---
+  copy:
+    src: file1
+    dest: /home/reza/testdir1
+    owner: reza
+    group: reza
+    mode: 0644
+    backup: yes
+    force: yes
+  tags: [copy_module]
+
+
+
+- name: --- copy module in remote machines ---
+  copy:
+    src: /home/reza/testdir1/file1
+    dest: /home/reza
+    owner: reza
+    group: reza
+    mode: 0644
+    backup: yes
+    remote_src: yes
+    # force: yes
+  tags: [copy_module_remote]
+
