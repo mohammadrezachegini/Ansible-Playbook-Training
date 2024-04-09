@@ -268,13 +268,13 @@
   yum:
     list: ansible
   register: yum_out
-  tag: [yum_list_module]
+  tags: [yum_list_module]
 
 
 - name: --- yum list print out --
   debug:
     msg: "{{yum_out}}"
-  tag: [yum_list_module]
+  tags: [yum_list_module]
 
 
 
@@ -304,3 +304,12 @@
   apt:
     autoremove: yes 
   tags: [apt_module_autoremove]
+
+
+
+- name: --- template module -- 
+  template:
+    src: .bashrc.j2
+    dest: ~/.bashrc
+    backup: yes
+  tags: [template_module]
