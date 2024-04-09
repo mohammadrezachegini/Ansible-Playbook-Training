@@ -237,7 +237,19 @@
   user:
     name: user1
     group: devops
-    state: present
+    state: present #absent for delete
     shell: /bin/bash
+    home: /tmp/reza
     password: 123
   tags: [user_module]
+
+
+- name: --- yum repos module ---
+  yum_repository:
+    name: epel
+    description: extra package
+    baseurl: http://download.fedoraproject.org/pub/epel/9/Everything/x86_64/
+    gpgcheck: no
+    enabled: yes
+    state: present
+  tags: [yum_repo_module]
