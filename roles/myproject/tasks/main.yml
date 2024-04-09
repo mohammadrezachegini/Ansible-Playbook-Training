@@ -291,3 +291,12 @@
   apt:
     deb: /opt/deb.pkg
   tags: [apt_module_dpkg]
+
+
+- name: --- apt remove modeule ---
+  apt:
+    name: [nginx,nginx-common] 
+    state: absent
+    purge: yes
+  tags: [apt_module_remove]
+
