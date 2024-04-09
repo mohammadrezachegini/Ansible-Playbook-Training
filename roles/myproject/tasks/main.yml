@@ -317,9 +317,11 @@
 
 
 
-- name: --- template module -- 
+- name: --- lineinfile module -- 
   lineinfile:
     path: ~/.bashrc # if it doesn't exist it will append at the end of the file
     insertafter: 'alias sss=echo {{myvarinbash}} '
     line: 'alias ssss=echo {{myvarinbash}}'
   tags: [lineinfile_module]
+
+
