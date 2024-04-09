@@ -223,3 +223,11 @@
     flat: yes
     validate_checksum: no
   tags: [fetch_module_checksum]
+
+
+
+- name: --- group module ---
+  group:
+    name: mamad
+    state: present
+  tags: [group_module]
