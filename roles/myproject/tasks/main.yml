@@ -115,3 +115,60 @@
   debug:
     msg: "{{scp_var.stdout}}"
   tags: [execute_script]
+
+
+
+- name: --- shell module for exercise ---
+  shell: cat /home/reza/testdir1/file1
+  register: my_var
+  tags: [shell_module_exe10_1]
+
+- name: --- printout the result ---
+  debug:
+    msg: "{{my_var.stdout}}"
+  tags: [shell_module_exe10_1]
+
+
+- name: --- shell module for exercise ---
+  shell: cat < /home/reza/testdir1/file1
+  register: my_var
+  tags: [shell_module_exe10_2]
+
+- name: --- printout the result ---
+  debug:
+    msg: "{{my_var.stdout}}"
+  tags: [shell_module_exe10_2]
+
+
+- name: --- shell module for exercise ---
+  shell: df -h
+  register: my_var
+  tags: [shell_module_exe10_3]
+
+- name: --- printout the result ---
+  debug:
+    msg: "{{my_var.stdout}}"
+  tags: [shell_module_exe10_3]
+
+
+- name: --- shell module for exercise ---
+  shell: ps aux | grep ansible
+  register: my_var
+  tags: [shell_module_exe10_4]
+
+- name: --- printout the result ---
+  debug:
+    msg: "{{my_var.stdout}}"
+  tags: [shell_module_exe10_4]
+
+
+- name: --- shell module for exercise ---
+  shell: curl -v anisa.co.ir
+  register: my_var
+  tags: [shell_module_exe10_5]
+
+- name: --- printout the result ---
+  debug:
+    msg: "{{my_var.stdout}}"
+  tags: [shell_module_exe10_5]
+
